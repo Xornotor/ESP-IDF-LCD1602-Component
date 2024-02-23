@@ -12,6 +12,28 @@
 void app_main() {
     lcd1602_init(RS, EN, D4, D5, D6, D7);
     lcd1602_write("Isto e um teste!");
+    lcd1602_set_cursor(1, 0);
+    lcd1602_write("Teste embaixo.");
+    lcd1602_set_cursor(0, 0);
+    vTaskDelay(pdMS_TO_TICKS(5000));
+    lcd1602_clear();
+    lcd1602_write("Testando de novo.");
+    lcd1602_set_cursor(1, 0);
+    lcd1602_write("Isto e um teste");
+    lcd1602_set_behavior(1, 1);
+    vTaskDelay(pdMS_TO_TICKS(5000));
+    lcd1602_clear();
+    lcd1602_write("Terceiro teste.");
+    lcd1602_set_cursor(1, 0);
+    lcd1602_write("Vamos la!");
+    vTaskDelay(pdMS_TO_TICKS(5000));
+    lcd1602_clear();
+    lcd1602_set_cursor(0, 0);
+    lcd1602_write("Teste final.");
+    lcd1602_set_cursor(1, 0);
+    lcd1602_write("Terminando.");
+    lcd1602_set_cursor(0, 0);
+    lcd1602_set_behavior(0, 0);
     while(true){
         vTaskDelay(pdMS_TO_TICKS(1));
     }
