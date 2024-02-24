@@ -129,4 +129,14 @@ esp_err_t lcd1602_set_cursor(uint8_t line, uint8_t column){
     return ESP_OK;
 }
 
+esp_err_t lcd1602_shift_left(){
+    lcd1602_cmdbits(LOW, LOW, LOW, HIGH);
+    lcd1602_cmdbits(HIGH, LOW, LOW, LOW);
+    return ESP_OK;
+}
 
+esp_err_t lcd1602_shift_right(){
+    lcd1602_cmdbits(LOW, LOW, LOW, HIGH);
+    lcd1602_cmdbits(HIGH, HIGH, LOW, LOW);
+    return ESP_OK;
+}

@@ -35,6 +35,7 @@ void app_main() {
     lcd1602_set_cursor(0, 0);
     lcd1602_set_behavior(0, 0);
     while(true){
-        vTaskDelay(pdMS_TO_TICKS(1));
+        lcd1602_shift_left();
+        vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
